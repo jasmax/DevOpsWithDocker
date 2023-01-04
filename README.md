@@ -1,7 +1,7 @@
 # DevOps with Docker (University of Helsinki MOOC)
 https://devopswithdocker.com/
 
-**Part 1.1 Definitons and basic concepts**
+**Part 1.1 Definitons and basic concepts**<br>
 *Exercise 1.1: Getting started
 Since we already did "Hello, World!" in the material let's do something else.
 Start 3 containers from image that does not automatically exit, such as nginx, detached.
@@ -39,9 +39,7 @@ f00597f87827   nginx                           "/docker-entrypoint.…"   3 minu
 
 *Exercise 1.2: Cleanup
 We've left containers and a image that won't be used anymore and are taking space, as docker ps -as and docker images will reveal.
-
 Clean the docker daemon from all images and containers.
-
 Submit the output for docker ps -a and docker images*
 
 C:\Users\User>docker ps -a
