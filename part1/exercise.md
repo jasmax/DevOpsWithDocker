@@ -119,3 +119,17 @@ __Output__
 [GIN-debug] GET    /*path                    --> server.Start.func1 (3 handlers)
 [GIN-debug] Listening and serving HTTP on :8080
 ```
+
+### __EXERCISE 1.9: VOLUMES__
+Submit the command you used to complete the exercise.<br>
+__Command__
+```
+docker run -d -v "C:/Users/User/Documents/mooc/devops with docker/text.log:/usr/src/app/text.log" devopsdockeruh/simple-web-service
+```
+
+### __EXERCISE 1.10: PORTS OPEN__
+Submit the command you used to complete the exercise.<br>
+__Command__
+```
+docker run --rm -p 9000:8080 -it web-server
+```
