@@ -1,16 +1,3 @@
-## Part 1.1 Definitons and basic concepts
-Most used commands
-|command|explain|shorthand|
-|:------|:------|:--------|
-|`docker image ls`|Lists all images|`docker images`|
-|`docker image rm <image>`|Removes an image|`docker rmi`|
-|`docker image pull <image>`|Pulls image from a docker registry|`docker pull`|
-|`docker container ls -a`|Lists all containers|`docker ps -a`|
-|`docker container run <image>`|Runs a container from an image|`docker run`|
-|`docker container rm <container>`|Removes a container|`docker rm`|
-|`docker container stop <container>`|Stops a container|`docker stop`|
-|`docker container exec <container>`|Executes a command inside the container|`docker exec`|
-  
 ### __Exercise 1.1: Getting started__
 Since we already did "Hello, World!" in the material let's do something else.
 Start 3 containers from an image that does not automatically exit (such as nginx) in detached mode.
@@ -32,6 +19,7 @@ f00597f87827   nginx                           "/docker-entrypoint.…"   3 minu
 184a93ec8a46   nginx                           "/docker-entrypoint.…"   3 minutes ago   Exited (0) 32 seconds ago             determined_goldstine
 6a4f0ed525f3   nginx                           "/docker-entrypoint.…"   7 minutes ago   Up 7 minutes                80/tcp    compassionate_lewin
 ```
+
 ### __Exercise 1.2: Cleanup__
 We have containers and an image that are no longer in use and are taking up space. 
 Running `docker ps -as` and `docker images` will confirm this.
@@ -50,6 +38,7 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 docker images
 REPOSITORY               TAG            IMAGE ID       CREATED       SIZE
 ```
+
 ### __EXERCISE 1.3: SECRET MESSAGE__
 Now that we've warmed up it's time to get inside a container while it's running!
 Image `devopsdockeruh/simple-web-service:ubuntu` will start a container that outputs logs into a file. Go inside the container and use `tail -f ./text.log` to follow the logs. Every 10 seconds the clock will send you a "secret message".
@@ -65,9 +54,7 @@ __Message__
 Secret message is: 'You can find the source code here: https://github.com/docker-hy'
 ```
 
-
-
-### EXERCISE 1.4: MISSING DEPENDENCIES
+### __EXERCISE 1.4: MISSING DEPENDENCIES__
 Start a Ubuntu image with the process `sh -c 'while true; do echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website; done'`<br>
 If you're on Windows, you'll want to switch the `'` and `"` around: `sh -c "while true; do echo 'Input website:'; read website; echo 'Searching..'; sleep 1; curl http://$website; done"`.<br>
 You will notice that a few things required for proper execution are missing. Be sure to remind yourself which flags to use so that the container actually waits for input.<br>
@@ -87,8 +74,12 @@ Test inputting `helsinki.fi` into the application. It should respond with someth
 ```
 This time return the command you used to start process and the command(s) you used to fix the ensuing problems.<br>
 **Hint** for installing the missing dependencies you could start a new process with `docker exec`.<br>
--This exercise has multiple solutions, if the curl for helsinki.fi works then it's done. Can you figure out other (smart) solutions?
+-This exercise has multiple solutions, if the curl for helsinki.fi works then it's done. Can you figure out other (smart) solutions?<br>
 
+__Command___
+```
+docker run -it --name missdep ubuntu sh -c "apt update; apt install -y curl; echo 'Input website:'; read website; echo 'Searching..'; sleep 1; curl http://$website;"
+```
 
 ### EXERCISE 1.5: SIZES OF IMAGES
 In the Exercise 1.3 we used `devopsdockeruh/simple-web-service:ubuntu`.
