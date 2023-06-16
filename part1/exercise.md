@@ -99,3 +99,23 @@ __Command__
 docker build . -t curler
 docker run -it curler
 ```
+
+### __EXERCISE 1.8: TWO LINE DOCKERFILE__
+In this exercise create a Dockerfile and use FROM and CMD to create a brand new image that automatically runs server.<br>
+[Dockerfile](part1/exercise1_8/Dockerfile)<br>
+__Command__
+```
+docker build . -t web-server
+docker run web-server
+```
+__Output__
+```
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:   export GIN_MODE=release
+ - using code:  gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /*path                    --> server.Start.func1 (3 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+```
