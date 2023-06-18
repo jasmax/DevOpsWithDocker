@@ -141,5 +141,42 @@ __Command__
 ```
 docker build . -f Dockerfile -t spring-project
 docker run -p 8080:8080 spring-project
-curl -X POST  "http://localhost:8080/press"
 ```
+
+### __EXERCISE 1.12: HELLO, FRONTEND!__
+Submit the Dockerfile.<br>
+[Dockerfile](part1/exercise1_12/Dockerfile)
+__Command__
+```
+docker build . -t example-frontend
+docker run -it -p 5000:5000 example-frontend
+```
+
+### __EXERCISE 1.13: HELLO, BACKEND!__
+Submit the Dockerfile and the command used.<br>
+[Dockerfile](part1/exercise1_13/Dockerfile)
+__Command__
+```
+docker build . -t example-backend 
+docker run -p 8080:8080 -it --rm example-backend
+```
+
+### __EXERCISE 1.14: ENVIRONMENT__
+Submit the edited Dockerfiles and commands used to run.<br>
+_frontend_
+[Dockerfile](part1/exercise1_14/frontend/Dockerfile)
+_backend_
+[Dockerfile](part1/exercise1_14/backend/Dockerfile)
+__Command__<br>
+_frontend_
+```
+docker build . -t example-frontend -f Dockerfile-frontend
+docker run -p 5000:5000 --rm -it example-frontend
+```
+_backend_
+```
+docker build . -t example-backend -f Dockerfile-backend
+docker run --rm -it -p 8080:8080 example-backend
+```
+
+
