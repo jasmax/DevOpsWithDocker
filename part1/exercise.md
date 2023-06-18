@@ -131,5 +131,15 @@ docker run -d -v "C:/Users/User/Documents/mooc/devops with docker/text.log:/usr/
 Submit the command you used to complete the exercise.<br>
 __Command__
 ```
-docker run --rm -p 9000:8080 -it web-server
+docker run -p 9000:8080 devopsdockeruh/simple-web-service server
+```
+
+### __EXERCISE 1.11: SPRING__
+Submit the Dockerfile you used to run the container.<br>
+[Dockerfile](part1/exercise1_11/Dockerfile)<br>
+__Command__
+```
+docker build . -f Dockerfile -t spring-project
+docker run -p 8080:8080 spring-project
+curl -X POST  "http://localhost:8080/press"
 ```
