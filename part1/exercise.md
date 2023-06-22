@@ -93,7 +93,7 @@ You found the correct password. Secret message is:
 
 ### __EXERCISE 1.7: IMAGE FOR SCRIPT__
 Submit the Dockerfile.<br>
-[Dockerfile](part1/exercise1_7/Dockerfile)<br>
+[Dockerfile](exercise1_7/Dockerfile)<br>
 __Command__
 ```
 docker build . -t curler
@@ -102,7 +102,7 @@ docker run -it curler
 
 ### __EXERCISE 1.8: TWO LINE DOCKERFILE__
 In this exercise create a Dockerfile and use FROM and CMD to create a brand new image that automatically runs server.<br>
-[Dockerfile](part1/exercise1_8/Dockerfile)<br>
+[Dockerfile](exercise1_8/Dockerfile)<br>
 __Command__
 ```
 docker build . -t web-server
@@ -136,7 +136,7 @@ docker run -p 9000:8080 devopsdockeruh/simple-web-service server
 
 ### __EXERCISE 1.11: SPRING__
 Submit the Dockerfile you used to run the container.<br>
-[Dockerfile](part1/exercise1_11/Dockerfile)<br>
+[Dockerfile](exercise1_11/Dockerfile)<br>
 __Command__
 ```
 docker build . -f Dockerfile -t spring-project
@@ -145,7 +145,7 @@ docker run -p 8080:8080 spring-project
 
 ### __EXERCISE 1.12: HELLO, FRONTEND!__
 Submit the Dockerfile.<br>
-[Dockerfile](part1/exercise1_12/Dockerfile)
+[Dockerfile](exercise1_12/Dockerfile)
 __Command__
 ```
 docker build . -t example-frontend
@@ -154,7 +154,7 @@ docker run -it -p 5000:5000 example-frontend
 
 ### __EXERCISE 1.13: HELLO, BACKEND!__
 Submit the Dockerfile and the command used.<br>
-[Dockerfile](part1/exercise1_13/Dockerfile)
+[Dockerfile](exercise1_13/Dockerfile)
 __Command__
 ```
 docker build . -t example-backend 
@@ -164,9 +164,9 @@ docker run -p 8080:8080 -it --rm example-backend
 ### __EXERCISE 1.14: ENVIRONMENT__
 Submit the edited Dockerfiles and commands used to run.<br>
 _frontend_
-[Dockerfile](part1/exercise1_14/frontend/Dockerfile)
+[Dockerfile](exercise1_14/frontend/Dockerfile)
 _backend_
-[Dockerfile](part1/exercise1_14/backend/Dockerfile)
+[Dockerfile](exercise1_14/backend/Dockerfile)
 __Command__<br>
 _frontend_
 ```
